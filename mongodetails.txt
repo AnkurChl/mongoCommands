@@ -1,0 +1,28 @@
+1. show dbs;
+2. use wiprodbs;  ---create if not created
+3. help ---- show options
+4. show collections ---show tables
+5. db.emp.insertOne({empid:123, ename:'Ankur'}) ---create table emp
+6. show collections
+7. db.emp.find() ----find the details for table emp
+8. .insert is same as .inserOne
+9. db.emp1.insert({name:'Ankur', age:33})
+10. db.emp1.insert({name:'Nikki', age:'unknown'})
+11. db.emp1.insert({name:'Ajay' , address: {city:'Kanpur',country:'India'}})
+12. db.emp1.count() ---count the number of rows in table emp1
+13. db.emp1.find() ---show all rows
+14. db.emp1.find().pretty() --- formatted output
+15. db.emp1.insert({_id:2332,name:'Ankur', age:33}) ---multiple insert will cause issue as _id is same
+16. db.emp1.getIndexes() ---show Indexes on collection/table.
+17. db.emp1.drop()  -----drop/delete the collection/table.
+18. db.emp1.find({name:'Ankur'}) ---find the row with name Ankur
+19. db.emp1.find({name:{$eq:'Ankur'}}) ----same as above
+20. db.emp1.find({name:{$eq:'Ankur'}}).count() --- count of records with name Ankur
+21. db.emp1.find({age:{$gt:33}}) ----salary greater than 33
+22. db.emp1.find({age:{$gt:33, $lt:36}}) -----between operator. by default 'AND' operator is there
+23. db.emp1.find({name:{$in:['Ankur']}})  ----- IN operator
+24. db.emp1.find({name:{$nin:['Ankur']}})--------- NOT IN operator
+25.  db.emp1.find({name:'Ankur', age:{$gt:33}}) ------- Name ankur and age >33
+26 . db.emp1.find({$and :[{name:'Ankur'}, {age:{$gt:33}}]})  ---same as above
+27. db.col.find({$and :[{condition1},{condition2}...]})
+28. db.emp1.find({$or :[{name:'Ankur'}, {age:{$gt:33}}]})
